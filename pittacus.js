@@ -45,10 +45,15 @@ var PittacusTest = {
 
     fail: function( msg ) {
 
+          throw new Error('fail(): ' + msg)
     },
 
     assert: function( value, msg ) {
            
+            if(!value) {
+
+                throw new Error('assert(): ' + msg)
+            }
     },
  
     assertEquals: function( expected, actual ) {
@@ -69,4 +74,5 @@ var PittacusTest = {
 };
 
 var tests = PittacusTest.run.bind( PittacusTest ),
-       eq = PittacusTest.assertEquals.bind( PittacusTest )
+       eq = PittacusTest.assertEquals.bind( PittacusTest ),
+       eqStrict = PittacusTest.assertStrictEquals.bind( PittacusTest )
