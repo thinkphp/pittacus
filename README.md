@@ -2,10 +2,8 @@
 
 Very simple in-browser unit-test microlibrary, with zero deps. Background turns green if all tests pass, otherwise red.
 
-## Usage
 
-  <script type="text/javascript" src="pittacus.js"></script>
-  <script>
+          #JS  
           function factorial(n) {
                    if(n == 0) return 1
                    else return n * factorial(n - 1)
